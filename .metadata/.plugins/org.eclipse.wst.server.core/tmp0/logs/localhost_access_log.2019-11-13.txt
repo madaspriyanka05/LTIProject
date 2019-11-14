@@ -1,0 +1,2 @@
+0:0:0:0:0:0:0:1 - - [13/Nov/2019:09:54:39 -0800] "GET /ProjectJSPPages/Registration.jsp HTTP/1.1" 200 909
+0:0:0:0:0:0:0:1 - - [13/Nov/2019:09:54:41 -0800] "GET /ProjectJSPPages/Registration.css HTTP/1.1" 304 -
