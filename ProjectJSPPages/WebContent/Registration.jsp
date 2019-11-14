@@ -3,7 +3,7 @@
 <link rel="stylesheet" href="Registration.css">
 
 <body>
-
+<pre></pre>
 <form action="">
 
   <div class="container">
