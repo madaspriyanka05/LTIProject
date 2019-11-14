@@ -3,7 +3,7 @@
 <link rel="stylesheet" href="Registration.css">
 
 <body>
-<head></head>
+<head> </head>
 <form action="">
 
   <div class="container">
