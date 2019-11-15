@@ -1,0 +1,12 @@
+/**
+ * 
+ */
+/**
+ * @author Priyanka Madas
+ *
+ */
+package com.lti.model;
+
+class Account
+{
+	}

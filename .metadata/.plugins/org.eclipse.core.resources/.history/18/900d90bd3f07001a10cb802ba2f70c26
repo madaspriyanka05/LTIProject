@@ -1,0 +1,12 @@
+/**
+ * 
+ */
+package com.lti.model;
+
+/**
+ * @author vshadmin
+ *
+ */
+public class NetBankAccount {
+
+}

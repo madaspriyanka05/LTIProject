@@ -4,6 +4,8 @@
  */
 package com.lti.DAO;
 
-public interface CustomerInterface {
+public interface CustomerInterface
+{
+	
 
 }

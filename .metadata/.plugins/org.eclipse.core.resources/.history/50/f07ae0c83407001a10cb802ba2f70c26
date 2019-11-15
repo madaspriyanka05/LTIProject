@@ -1,0 +1,25 @@
+/**
+ * 
+ */
+/**
+ * @author Priyanka Madas
+ * @Date 14-11-19
+ */
+package com.lti.model;
+
+import javax.persistence.Entity;
+import javax.persistence.Id;
+
+@Entity
+
+public class Account
+{
+	@Id
+	private int accId;
+	//fk
+	private int custId;
+	
+	
+	
+	
+	}

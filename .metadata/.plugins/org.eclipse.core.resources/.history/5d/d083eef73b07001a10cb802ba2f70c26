@@ -1,0 +1,27 @@
+/**
+ * 
+ */
+package com.lti.model;
+
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+
+/**
+ * @author Priyanka 
+ * @Date 14-11-19
+ *
+ */
+@Entity
+public class Transcation
+{
+	@Id
+	@GeneratedValue
+	private int txId;
+	
+	@ManyToOne
+	@JoinColumn(mappedBy="",)
+	
+
+}

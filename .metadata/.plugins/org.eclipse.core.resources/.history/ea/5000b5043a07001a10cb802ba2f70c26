@@ -1,0 +1,15 @@
+/**
+ * @author Priyanka 
+ * @Date  14-11-19
+ */
+
+package com.lti.model;
+
+import javax.persistence.Entity;
+
+@Entity
+public class Customer 
+{
+	
+
+}

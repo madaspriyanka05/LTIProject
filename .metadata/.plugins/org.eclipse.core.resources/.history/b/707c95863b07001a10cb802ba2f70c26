@@ -1,0 +1,37 @@
+/**
+ * 
+ */
+/**
+ * @author Priyanka Madas
+ * @Date 14-11-19
+ */
+package com.lti.model;
+
+import java.time.LocalDate;
+
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.OneToOne;
+
+@Entity
+
+public class Account
+{
+	@Id
+	@GeneratedValue
+	private int accId;
+	
+	@OneToOne
+	@JoinColumn(name = "Cust_Id", nullable=false)// name of the foreign key
+	private int custId;
+	
+	private double accBalance;
+	private LocalDate accOpenAccDate;
+	private String accStatus;
+	
+	
+	
+	
+	}

@@ -1,0 +1,20 @@
+package com.lti.model;
+
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
+
+@Entity
+public class Beneficiary 
+{
+	@Id 
+	private int bfId;
+	
+	@ManyToOne
+	@JoinColumn(name="ACC_ID",nullable=true)
+	private Account account;
+	
+	
+
+}

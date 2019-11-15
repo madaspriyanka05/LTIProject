@@ -1,0 +1,43 @@
+/**
+ * @author Priyanka 
+ * @Date  14-11-19
+ */
+
+package com.lti.model;
+
+import java.time.LocalDate;
+
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+
+@Entity
+public class Customer 
+{
+	@Id
+	@GeneratedValue
+	private int custId;
+
+	private String custFname;
+	private String custMname;
+	private String custLname;
+	private String custGender;
+	private LocalDate custDoB;
+	
+	@Id
+	private int custAdhar;
+	
+	private String custEmailId;
+	private int custMobileNo;
+	
+	private String custAddress;
+	private String custFathername;
+	private String custOccType;
+	private double custIncome;
+	private String custState;
+	private int custZipcode ;
+	
+	
+	
+	
+}

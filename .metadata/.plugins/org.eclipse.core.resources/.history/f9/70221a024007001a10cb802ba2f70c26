@@ -1,0 +1,6 @@
+package com.lti.component;
+
+public class GenericDao
+{
+
+}

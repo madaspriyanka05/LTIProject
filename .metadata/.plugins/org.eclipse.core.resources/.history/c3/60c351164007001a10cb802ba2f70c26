@@ -1,0 +1,12 @@
+/**
+ * 
+ */
+package com.lti.DAO;
+
+/**
+ * @author vshadmin
+ *
+ */
+public class GenericDao {
+
+}

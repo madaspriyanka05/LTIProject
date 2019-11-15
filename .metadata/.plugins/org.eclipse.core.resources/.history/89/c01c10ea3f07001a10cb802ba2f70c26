@@ -1,0 +1,32 @@
+/**
+ * 
+ */
+package com.lti.model;
+
+import javax.persistence.CascadeType;
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.OneToOne;
+
+/**
+ * @author Priyanka
+ * @Date 14-11-19
+ *
+ */
+@Entity
+
+public class NetBankAccount 
+{
+	@Id
+	private String nbUsername;
+	private String nbpassword;
+	private String nbTransferpass;
+	//private int nbotp;
+	private String nbSecurityQues;
+	private String nbSecurityAns;
+	
+	@OneToOne(mappedBy="account",cascade=CascadeType.ALL)
+	private Account NetBankingAccount;
+	
+
+}

@@ -1,0 +1,52 @@
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+	xmlns:context="http://www.springframework.org/schema/context"
+		xmlns:tx="http://www.springframework.org/schema/tx"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+	http://www.springframework.org/schema/beans/spring-beans.xsd
+	http://www.springframework.org/schema/context
+	http://www.springframework.org/schema/context/spring-context.xsd
+	http://www.springframework.org/schema/tx
+	http://www.springframework.org/schema/tx/spring-tx.xsd">
+
+	<!--Loading of Annotated Classes/beans -->
+	<context:component-scan base-package="com.lti.component;" />
+	<!-- Database connection -->
+	<bean id="dataSource" class="org.apache.commons.dbcp2.BasicDataSource"                  
+		destroy-method="close">
+		<property name="driverClassName" value="oracle.jdbc.driver.OracleDriver" />
+		<property name="url"
+			value="jdbc:oracle:thin:@localhost:1521:XE" />
+		<property name="username" value="hr" />
+		<property name="password" value="hr" />
+	</bean>
+	
+	
+		<!--**************Hibernate/JPA Configuration**************************  -->
+<!--	 This configuration below will help us create the EntityManagerFactory and the EntityManager
+		objects. Also there is no need to create a separate META-INF/persistence.xml file, all the orm 
+				specific settings can be done within this bean configuration itself			 -->
+	
+	<bean id="myEmf"
+  class="org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean">
+    <property name="dataSource" ref="dataSource" />   <!-- Database -->
+    <property name="packagesToScan" value="com.lti.component" /> <!-- Location of the @Entity classes  -->
+    <property name="jpaVendorAdapter">
+        <bean class="org.springframework.orm.jpa.vendor.HibernateJpaVendorAdapter" />
+    </property>
+    <property name="jpaProperties">
+        <props>
+              <prop key="hibernate.show_sql">true</prop> 	<!-- to show the SQL queries that we will execute -->
+        </props>
+    </property>
+</bean>
+
+<!-- Bean tag is used to craete the objects where annotations are not there -->
+
+<!-- Following code is written for Providing support for transaction management -->
+<bean id="transactionManager" class="org.springframework.orm.jpa.JpaTransactionManager">
+    <property name="entityManagerFactory" ref="myEmf" />
+</bean>
+<tx:annotation-driven />
+
+</beans>  
