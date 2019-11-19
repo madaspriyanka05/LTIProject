@@ -1,0 +1,53 @@
+package com.lti.entity;
+/**
+ * @author Priyanka 
+ * @Date  14-11-19
+ */
+import java.time.LocalDate;
+
+import javax.persistence.Access;
+import javax.persistence.AccessType;
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.OneToOne;
+import javax.persistence.PrimaryKeyJoinColumn;
+
+import org.hibernate.annotations.GenericGenerator;
+import org.hibernate.annotations.Parameter;
+
+@Entity
+@Access(value=AccessType.FIELD)
+public class Customer 
+{
+	
+	
+	@Column(name = "accId", unique = true, nullable = false)
+	@GeneratedValue(generator = "gen")
+	@GenericGenerator(name = "gen", strategy = "foreign", parameters = { @Parameter(name = "property", value = "Account") })
+	private int custId;
+
+	private String custFname;
+	private String custMname;
+	private String custLname;
+	private String custGender;
+	private LocalDate custDoB;
+	private int custAadhar;
+	private String custEmailId;
+	private int custMobileNo;
+	private String custAddress;
+	private String custFathername;
+	private String custOccType;
+	private double custIncome;
+	private String custState;
+	private int custZipcode ;
+	
+	@OneToOne
+	@PrimaryKeyJoinColumn
+	//private Employee employee;
+	//@OneToOne(mappedBy="account",cascade=CascadeType.ALL)
+	private Account customeraccount;
+
+
+	
+}

@@ -1,0 +1,41 @@
+package com.lti.entity;
+
+/**
+ * @author Priyanka Madas and Jyoti Dixit
+ * @Date 14-11-19
+ */
+
+
+import java.time.LocalDate;
+import java.util.List;
+
+import javax.persistence.CascadeType;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.OneToMany;
+import javax.persistence.OneToOne;
+
+@Entity
+public class Account
+{
+	@Id
+	@GeneratedValue
+	private int accId;
+	@Id
+	//@GeneratedValue
+	private int custId;
+	
+	private double accBalance;
+	private LocalDate accOpenAccDate;
+	private String accStatus;
+	
+	@OneToOne
+	@JoinColumn(name = "Cust_Id", nullable=false)// name of the foreign key
+	private Customer customer;
+		
+	@OneToMany(mappedBy="account",cascade=CascadeType.ALL)
+	private List <Transaction> transactions;
+	
+	}

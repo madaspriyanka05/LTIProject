@@ -1,0 +1,18 @@
+package com.lti.Interface;
+
+/**
+ * @author Priyanka Madas and Jyoti Dixit
+ * @Date 14-11-19
+ */
+package com.lti.DAO;
+
+import java.util.List;
+
+import com.lti.CustomerExceptions;
+import com.lti.model.Customer;
+
+public interface CustomerInterface
+{
+	public void addNewCustomer(Customer carPart) throws CustomerExceptions;//, ClassNotFoundException,SQLException;
+	public List<Customer> getCustomersList() throws CustomerExceptions;
+}
