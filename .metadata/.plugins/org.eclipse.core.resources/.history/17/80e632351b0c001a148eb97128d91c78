@@ -1,0 +1,19 @@
+package com.lti.service;
+
+@Service
+public class SendMailService {
+
+		@Autowired
+		private MailSender mailSender;
+		
+		@Autowired
+		private SimpleMailMessage message;
+		
+		public void send(String email,String subject,String content) {
+			message.setTo(email); //set a proper recipient of the mail
+			message.setSubject(subject);
+			message.setText(content);
+			mailSender.send(message);
+		
+	}
+}

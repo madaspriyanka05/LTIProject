@@ -1,0 +1,58 @@
+package com.lti.entity;
+
+/**
+ * @author Priyanka Madas and Jyoti Dixit
+ * @Date 14-11-19
+ */
+
+import javax.persistence.*;
+
+
+@Entity
+public class Beneficiary 
+{
+	@Id
+	@GeneratedValue(strategy=GenerationType.SEQUENCE, generator = "seq")
+	@SequenceGenerator(sequenceName = "beneficiary_seq", name = "seq", allocationSize = 1)
+	private int id; 
+	
+	private double bfMaxTransferAmt;
+	private String bfName;
+	
+	@ManyToOne
+	@JoinColumn(name="accId")
+	private Account  account;
+	
+	public int getBfId() {
+		return bfId;
+	}
+
+	public void setBfId(int bfId) {
+		this.bfId = bfId;
+	}
+
+	public double getBfMaxTransferAmt() {
+		return bfMaxTransferAmt;
+	}
+
+	public void setBfMaxTransferAmt(double bfMaxTransferAmt) {
+		this.bfMaxTransferAmt = bfMaxTransferAmt;
+	}
+
+	public String getBfName() {
+		return bfName;
+	}
+
+	public void setBfName(String bfName) {
+		this.bfName = bfName;
+	}
+
+	public Account getAccount() {
+		return account;
+	}
+
+	public void setAccount(Account account) {
+		this.account = account;
+	}
+
+}

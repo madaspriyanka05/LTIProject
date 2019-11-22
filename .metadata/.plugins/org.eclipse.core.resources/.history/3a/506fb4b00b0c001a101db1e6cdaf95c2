@@ -1,0 +1,32 @@
+package com.lti.entity;
+/**
+ * @author Priyanka and Jyoti
+ * @Date 14-11-19
+ *
+ */
+
+
+import javax.persistence.CascadeType;
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.OneToOne;
+
+
+@Entity
+public class NetBankAccount 
+{
+	
+	private String username;
+	private String password;
+	private String transactionpassword;
+	//private int nbotp;
+	private String securityQues;
+	private String securityAns;
+	
+	@OneToOne
+	@JoinColumn(name="id")
+	private Account netbankingaccount;
+	
+}

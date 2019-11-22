@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Registration Form</title>
+</head>
+
+<body>
+
+    <form>
+
+        <table align="center" cellpadding="10">
+            <tr>
+                <td>
+                    <b>Enter FirstName:</b> <input type="text" placeholder="FirstName"  name="custFname" required>
+                </td>
+            </tr>
+
+            <tr>
+                <td>
+                    <b>Enter MiddleName:</b>
+                	<td><input type="text" placeholder="MiddleName" name="custMname" required><br></td>
+                </td>
+            </tr>
+
+            <tr>
+                <td>Enter LastName:
+                	<td><input type="text" placeholder="LastName" name="custLname" required><br>
+                	</td>
+                </td>
+            </tr>
+
+            <td>
+                Date-Of-Birth :
+            	<td><input type="date" name="custDoB"><br></td>
+            </td>
+            </tr>
+
+            <tr>
+                <td>
+                    Gender:
+                <td><input type="radio" name="custGender" value="Male">Male
+                    <input type="radio" name="custGender" value="Female">Female<br>
+                </td>
+            </tr>
+
+          
+            <tr>
+                <td>
+                  Address:
+                <td> <textarea><input type="text" placeholder="Enter Address" name="custAddress" required></td></textarea><br>
+                </td>
+            </tr>
+             
+                       <tr>
+                <td>
+                    State :
+                <td><select>
+                        <option value="Maharashtra">Maharashtra</option>
+                        <option value="Delhi">Delhi</option>
+                        <option value="Andhra Pradesh">Andhra Pradesh</option>
+                        <option value="Assam">Assam</option>
+                        <option value="Goa">Goa</option>
+                    </select></td><br></td>
+
+            </tr>
+            
+            <tr>
+                <td>
+                    Pincode:
+                <td><input type="number" placeholder="Enter Pincode" name="custZipcode" required><br></td>
+                </td>
+            </tr>
+        
+            <tr>
+               <td>AdharCard Number:
+                <td><input type="number" placeholder="Enter AdharCard Number" name="custAadhar" required></td><br>
+                </td>
+            </tr>
+        
+           <tr>
+               <td>Email Id:
+                <td> <input type="text" placeholder="Enter EnailId" name="custEmailId" required></td><br>
+                </td>
+            </tr>
+             
+            <tr>
+                <td><input type="submit" name="submit" placeholder="Submit" />
+                    <input type="reset" name="reset" placeholder="Reset" /></td>
+            </tr>
+
+        </table>
+    </form>
+</body>
+
+</html>
