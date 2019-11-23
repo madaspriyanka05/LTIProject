@@ -1,0 +1,27 @@
+package com.lti.controller;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+
+
+import com.lti.entity.Customer;
+import com.lti.service.CustomerService;
+
+@Controller
+public class CustomerController {
+	@Autowired
+	private CustomerService customerService;
+	
+	
+	//Registering the customer 
+	@RequestMapping(path="register.lti",method=RequestMethod.POST)
+	public String register(Customer cust) 
+	{
+		customerService.register(cust);
+		System.out.println(cust);
+		return "Login.jsp";
+	}
+	
+}

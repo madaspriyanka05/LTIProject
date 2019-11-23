@@ -1,5 +1,5 @@
-GitRepositoriesView.GitDirectories=D\:\\LTIProject\\.git;
-GitRepositoriesView.GitDirectories.relative=.git;
+GitRepositoriesView.GitDirectories=D\:\\LTIProject\\.git;C\:\\Users\\lntinfotech\\git\\Project\\.git;
+GitRepositoriesView.GitDirectories.relative=.git;C\:\\Users\\lntinfotech\\git\\Project\\.git;
 RepositorySearchDialogDeepSearch=false
 RepositorySearchDialogSearchPath=D\:\\LTIProjectOnlineBanking
 core_autoIgnoreDerivedResources=false

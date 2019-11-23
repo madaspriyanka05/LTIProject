@@ -1,0 +1,81 @@
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+	xmlns:context="http://www.springframework.org/schema/context"
+		xmlns:tx="http://www.springframework.org/schema/tx"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+	http://www.springframework.org/schema/beans/spring-beans.xsd
+	http://www.springframework.org/schema/context
+	http://www.springframework.org/schema/context/spring-context.xsd
+	http://www.springframework.org/schema/tx
+	http://www.springframework.org/schema/tx/spring-tx.xsd">
+
+	<!--Loading of Annotated Classes/beans -->
+	<context:component-scan base-package="com.lti.controller,com.lti.service,com.lti.repository,com.lti.Interface" />
+	<!-- Database connection -->
+	<bean id="dataSource" class="org.apache.commons.dbcp2.BasicDataSource"                  
+		destroy-method="close">
+		<property name="driverClassName" value="oracle.jdbc.driver.OracleDriver" />
+		<property name="url"
+			value="jdbc:oracle:thin:@192.168.101.46:1521:XE" />
+		<property name="username" value="OnlineBanking" />
+		<property name="password" value="gupta" />
+	</bean>
+	
+	
+		<!--**************Hibernate/JPA Configuration**************************  -->
+<!--	 This configuration below will help us create the EntityManagerFactory and the EntityManager
+		objects. Also there is no need to create a separate META-INF/persistence.xml file, all the orm 
+				specific settings can be done within this bean configuration itself			 -->
+	
+	<bean id="myEmf"
+  class="org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean">
+    <property name="dataSource" ref="dataSource" />   <!-- Database -->
+    <property name="packagesToScan" value="com.lti.entity" /> <!-- Location of the @Entity classes  -->
+    <property name="jpaVendorAdapter">
+        <bean class="org.springframework.orm.jpa.vendor.HibernateJpaVendorAdapter" />
+    </property>
+    <property name="jpaProperties">
+        <props>
+              <prop key="hibernate.show_sql">true</prop> 	<!-- to show the SQL queries that we will execute -->
+        </props>
+    </property>
+</bean>
+
+<!-- Bean tag is used to craete the objects where annotations are not there -->
+
+<!-- Following code is written for Providing support for transaction management -->
+<bean id="transactionManager" class="org.springframework.orm.jpa.JpaTransactionManager">
+    <property name="entityManagerFactory" ref="myEmf" />
+</bean>
+<tx:annotation-driven />
+
+<bean id="mailSender" class="org.springframework.mail.javamail.JavaMailSenderImpl">
+        <property name="host" value="smtp.office365.com"/>
+        <property name="port" value="587" />
+        <property name="username" value="divyanshu.gupta@lntinfotech.com"/>
+        <property name="password" value="Bgja3b001$"/>
+        <property name="javaMailProperties">
+            <props>
+                <prop key="mail.transport.protocol">smtp</prop>
+                <prop key="mail.smtp.auth">true</prop>
+                <prop key="mail.smtp.starttls.enable">true</prop>
+                <prop key="mail.debug">true</prop>
+                <prop key="mail.smtp.connecttimeout">50000</prop>
+                <prop key="mail.smtp.timeout">30000</prop>
+                <prop key="mail.smtp.writetimeout">50000</prop>
+            </props>
+        </property>
+    </bean>
+    
+    <bean id="preConfiguredMessage" class="org.springframework.mail.SimpleMailMessage">
+        <property name="from" value="divyanshu.gupta@lntinfotech.com"></property>
+    </bean>
+   
+    <!-- Enabling support for File Upload in Spring MVC -->
+	<bean id="multipartResolver" class="org.springframework.web.multipart.commons.CommonsMultipartResolver">
+     <property name="maxUploadSizePerFile" value="52428800"/>
+    </bean>
+    
+
+
+</beans>  

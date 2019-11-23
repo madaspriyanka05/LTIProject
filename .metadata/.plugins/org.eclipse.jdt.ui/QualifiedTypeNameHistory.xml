@@ -2,6 +2,26 @@
 <qualifiedTypeNameHistroy>
 <fullyQualifiedTypeName name="com.sun.java.util.jar.pack.Package.File"/>
 <fullyQualifiedTypeName name="javax.persistence.JoinColumn"/>
+<fullyQualifiedTypeName name="org.springframework.web.WebApplicationInitializer"/>
+<fullyQualifiedTypeName name="javax.servlet.ServletRegistration"/>
+<fullyQualifiedTypeName name="javax.servlet.ServletRegistration.Dynamic"/>
+<fullyQualifiedTypeName name="org.springframework.web.servlet.DispatcherServlet"/>
+<fullyQualifiedTypeName name="com.lti.Interface.CustomerInterface"/>
+<fullyQualifiedTypeName name="org.springframework.web.context.WebApplicationContext"/>
+<fullyQualifiedTypeName name="com.lti.service.CustomerService"/>
+<fullyQualifiedTypeName name="org.springframework.scheduling.quartz.LocalDataSourceJobStore"/>
+<fullyQualifiedTypeName name="com.lti.Exception.CustomerException"/>
+<fullyQualifiedTypeName name="java.time.LocalDate"/>
+<fullyQualifiedTypeName name="org.springframework.web.bind.annotation.RequestParam"/>
+<fullyQualifiedTypeName name="org.springframework.beans.factory.annotation.Autowired"/>
+<fullyQualifiedTypeName name="com.lti.repository.CustomerRepository"/>
+<fullyQualifiedTypeName name="javax.persistence.TypedQuery"/>
+<fullyQualifiedTypeName name="com.lti.entity.Customer"/>
+<fullyQualifiedTypeName name="javax.persistence.CascadeType"/>
+<fullyQualifiedTypeName name="org.springframework.stereotype.Repository"/>
 <fullyQualifiedTypeName name="javax.persistence.Entity"/>
 <fullyQualifiedTypeName name="javax.persistence.Table"/>
+<fullyQualifiedTypeName name="org.springframework.stereotype.Service"/>
+<fullyQualifiedTypeName name="org.springframework.stereotype.Controller"/>
+<fullyQualifiedTypeName name="org.springframework.transaction.annotation.Transactional"/>
 </qualifiedTypeNameHistroy>
